@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { MdFitnessCenter } from "react-icons/md";
 import { TiSocialInstagram } from "react-icons/ti";
@@ -7,6 +7,17 @@ import { FaShoppingBag, FaUser } from "react-icons/fa";
 
 
 const BottomNav = ({ loc }) => {
+
+    useEffect(() => {
+        // Проверка наличия объекта TelegramGameProxy
+        if (window.TelegramGameProxy) {
+            // Пример вызова метода receiveEvent
+            const eventData = { /* ваши данные события */ };
+            window.TelegramGameProxy.receiveEvent(eventData);
+        } else {
+            console.error("TelegramGameProxy is not available.");
+        }
+    }, []);
 
     return (
         <div className='mobnav'>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import BottomNav from '../components/BottomNav'
 import Header from '../components/Header'
 import { useNavigate } from 'react-router-dom'
@@ -6,6 +6,17 @@ import { useNavigate } from 'react-router-dom'
 const Main = () => {
 
     const navigate = useNavigate()
+
+    useEffect(() => {
+        // Проверка наличия объекта TelegramGameProxy
+        if (window.TelegramGameProxy) {
+            // Пример вызова метода receiveEvent
+            const eventData = { /* ваши данные события */ };
+            window.TelegramGameProxy.receiveEvent(eventData);
+        } else {
+            console.error("TelegramGameProxy is not available.");
+        }
+    }, []);
 
     return (
         <div>

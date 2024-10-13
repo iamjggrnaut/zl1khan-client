@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import photo1 from '../assets/3.JPG'
 import photo2 from '../assets/1.JPG'
 import photo3 from '../assets/2.JPEG'
@@ -7,6 +7,18 @@ import BottomNav from '../components/BottomNav'
 import Header from '../components/Header'
 
 const Academy = () => {
+
+    useEffect(() => {
+        // Проверка наличия объекта TelegramGameProxy
+        if (window.TelegramGameProxy) {
+            // Пример вызова метода receiveEvent
+            const eventData = { /* ваши данные события */ };
+            window.TelegramGameProxy.receiveEvent(eventData);
+        } else {
+            console.error("TelegramGameProxy is not available.");
+        }
+    }, []);
+
     return (
         <div>
             <Header />
