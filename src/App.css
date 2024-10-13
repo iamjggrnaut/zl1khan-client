@@ -74,6 +74,13 @@
   color: #fff;
 }
 
+.program-card {
+  padding: 20px 32px;
+  border: 1px solid red;
+  margin: 1rem;
+  box-shadow: 0 0 16px rgb(255, 0, 0, 0.75);
+}
+
 .loader:before,
 .loader:after {
   content: '';
